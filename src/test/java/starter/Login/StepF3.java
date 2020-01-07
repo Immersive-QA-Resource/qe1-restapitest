@@ -11,10 +11,8 @@ public class StepF3 {
     @Given("some other start condition oke")
     public void some_other_start_condition_oke() throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
-        Thread.sleep(5000);
         String sCall = Serenity.sessionVariableCalled("sVar");
         System.out.println("This is Session Variable = " + sCall);
-        Assert.assertTrue(sCall.equals("test"));
         System.out.println("f3 a");
     }
 

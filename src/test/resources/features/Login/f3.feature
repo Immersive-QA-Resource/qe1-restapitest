@@ -1,4 +1,3 @@
-@Test
 Feature: f3
 
   As OPs

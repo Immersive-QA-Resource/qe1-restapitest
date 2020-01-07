@@ -1,4 +1,3 @@
-@ignore
 Feature: f2
 
   As OPs
