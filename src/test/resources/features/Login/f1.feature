@@ -1,3 +1,4 @@
+@sequence
 Feature: f1
 
   As OPs
