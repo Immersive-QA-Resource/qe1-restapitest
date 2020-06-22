@@ -20,11 +20,10 @@ public class Request {
                 .statusCode(statusCode);
     }
 
-    public static void Post (Map body, String endpoint, String token, int statusCode){
+    public static void Post (Map body, String endpoint, int statusCode){
         SerenityRest
                 .given()
                 .contentType("application/json")
-                .header("Authorization", "Bearer "+token)
                 .body(body)
                 .when()
                 .post(endpoint)

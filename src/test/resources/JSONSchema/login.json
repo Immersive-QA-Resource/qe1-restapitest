@@ -1,0 +1,263 @@
+
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "stan": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "string"
+    },
+    "transmission_datetime": {
+      "type": "string"
+    },
+    "merchant_code": {
+      "type": "string"
+    },
+    "local_trx_time": {
+      "type": "string"
+    },
+    "local_trx_date": {
+      "type": "string"
+    },
+    "acquiring_institution_id": {
+      "type": "string"
+    },
+    "admin_charge": {
+      "type": "string"
+    },
+    "mti": {
+      "type": "string"
+    },
+    "pan": {
+      "type": "string"
+    },
+    "processing_code": {
+      "type": "string"
+    },
+    "settlement_date": {
+      "type": "string"
+    },
+    "retrieval_ref_no": {
+      "type": "string"
+    },
+    "blth": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "bill_count": {
+      "type": "string"
+    },
+    "bill_repeat_count": {
+      "type": "string"
+    },
+    "rp_tag": {
+      "type": "string"
+    },
+    "customer_address": {
+      "type": "string"
+    },
+    "group_code": {
+      "type": "string"
+    },
+    "group_desc": {
+      "type": "string"
+    },
+    "bills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "bill_date": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "kubikasi": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "penalty": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "bill_amount": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "waterusage_bill": {
+            "type": "string"
+          },
+          "total_fee": {
+            "type": "string"
+          },
+          "detail_fee": {
+            "type": "object",
+            "properties": {
+              "pdam_fee": {
+                "type": "string"
+              },
+              "maintenance_fee": {
+                "type": "string"
+              },
+              "retribution_fee": {
+                "type": "string"
+              },
+              "wastewater_fee": {
+                "type": "string"
+              },
+              "service_fee": {
+                "type": "string"
+              },
+              "stamp_fee": {
+                "type": "string"
+              },
+              "reconnection_fee": {
+                "type": "string"
+              },
+              "nonwater_fee": {
+                "type": "string"
+              },
+              "installment_amount": {
+                "type": "string"
+              },
+              "seal_penalty": {
+                "type": "string"
+              },
+              "lltt_fee": {
+                "type": "string"
+              },
+              "gwt": {
+                "type": "string"
+              },
+              "vat": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "pdam_fee",
+              "maintenance_fee",
+              "retribution_fee",
+              "wastewater_fee",
+              "service_fee",
+              "stamp_fee",
+              "reconnection_fee",
+              "nonwater_fee",
+              "installment_amount",
+              "seal_penalty",
+              "lltt_fee",
+              "gwt",
+              "vat"
+            ]
+          },
+          "lift_usage": {
+            "type": "string"
+          },
+          "total_usage": {
+            "type": "string"
+          },
+          "detail_usage": {
+            "type": "object",
+            "properties": {
+              "usage1": {
+                "type": "string"
+              },
+              "usage2": {
+                "type": "string"
+              },
+              "usage3": {
+                "type": "string"
+              },
+              "usage4": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true,
+            "required": [
+              "usage1",
+              "usage2",
+              "usage3",
+              "usage4"
+            ]
+          },
+          "info_text": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true,
+        "required": [
+          "bill_date",
+          "kubikasi",
+          "penalty",
+          "bill_amount",
+          "waterusage_bill",
+          "total_fee",
+          "detail_fee",
+          "lift_usage",
+          "total_usage",
+          "detail_usage",
+          "info_text"
+        ]
+      }
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "response_code": {
+      "type": "string"
+    },
+    "rc": {
+      "type": "string"
+    },
+    "trx_id": {
+      "type": "string"
+    },
+    "idpel": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "stan",
+    "amount",
+    "transmission_datetime",
+    "merchant_code",
+    "local_trx_time",
+    "local_trx_date",
+    "acquiring_institution_id",
+    "admin_charge",
+    "mti",
+    "pan",
+    "processing_code",
+    "settlement_date",
+    "retrieval_ref_no",
+    "blth",
+    "name",
+    "bill_count",
+    "bill_repeat_count",
+    "rp_tag",
+    "customer_address",
+    "group_code",
+    "group_desc",
+    "bills",
+    "status",
+    "response_code",
+    "rc",
+    "trx_id",
+    "idpel"
+  ]
+}
+
