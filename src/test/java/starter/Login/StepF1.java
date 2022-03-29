@@ -5,17 +5,23 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.rest.SerenityRest;
+import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
 import utils.Endpoint;
+import utils.MyWebServiceActions;
 import utils.Request;
 import utils.Validation;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class StepF1 {
+
+    @Steps
+    MyWebServiceActions myWebServiceActions;
 
     @Given("some start condition")
     public void some_start_condition() throws InterruptedException {
@@ -24,12 +30,29 @@ public class StepF1 {
         jsonAsMap.put("email", "eve.holt@reqres.in");
         jsonAsMap.put("password", "cityslicka");
 
+
+        Map<String, Object> json = new HashMap<>();
+        json.put("userId","nilainya");
+        json.put("collectionOfIsbns",new ArrayList<Object>() {
+            {
+                add(new HashMap<String,Object>(){
+                    {
+                        put("isbn","nilainya");
+                    }
+                });
+            }
+        });
+
+
+
         Request.Post(jsonAsMap, Endpoint.LOGIN, 200);
 
         String token = SerenityRest.then().extract().path("token");
         System.out.println("token = "+token);
 
-        SerenityRest.then().body(matchesJsonSchemaInClasspath("JSONSchema/login.json"));
+//        SerenityRest.then().body(matchesJsonSchemaInClasspath("JSONSchema/login.json"));
+
+        myWebServiceActions.invoke_my_webservice();
 
 //        Validation.ValidationJSONSchema("src/test/resources/JSONSchema/login.json");
 
